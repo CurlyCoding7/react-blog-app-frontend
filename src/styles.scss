@@ -1,0 +1,670 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //font-family: "Roboto", sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.home {
+  background-color: white;
+  min-height: 100vh;
+  padding: 0 5%;
+
+  > .search {
+    background-color: black;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-left: 0.5rem;
+    margin-top: 5rem;
+    position: sticky;
+    top: 80px;
+    z-index: 2;
+
+    > input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 0.5rem;
+      width: 100%;
+      background: transparent;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  > .feed {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+.posts {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.drafts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6rem;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0 5%;
+}
+
+.categories {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  gap: 1rem;
+
+  > h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: black;
+  }
+
+  .cat {
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 3px 2px rgb(124, 119, 119);
+  }
+}
+
+.singlePost {
+  // background-color: #eeeff4;
+  background-color: white;
+  display: flex;
+  padding: 0 5%;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  > .content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    > .icons {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+      gap: 0.5rem;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+        width: 24px;
+        border-radius: 50%;
+        margin: 0 5px 0 0;
+      }
+    }
+    > img {
+      width: 100%;
+      height: 300px;
+      border-radius: 5px;
+    }
+    > .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    > p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.relatedPosts {
+  display: flex;
+  width: 27%;
+  flex-direction: column;
+
+  > h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: blue;
+  }
+  > .post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 25vh;
+      border-radius: 5px;
+    }
+    > span {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    > button {
+      background-color: blue;
+      color: white;
+      font-size: 0.9rem;
+      border: none;
+      padding: 0.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 5rem;
+      margin: auto;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: rgb(75, 75, 225);
+      }
+    }
+  }
+}
+
+.createPost {
+  // background-color: #eeeff4;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  margin-top: 5rem;
+  height: 600px;
+
+  .content {
+    width: 70%;
+    // height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > input {
+      padding: 0.5rem;
+      background: transparent;
+      border: 1px solid lightgray;
+    }
+
+    > .editContainer {
+      height: 540px;
+      border: 1px solid lightgray;
+      // overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 28%;
+
+    .item {
+      border: 1px solid lightgray;
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #555;
+
+      .choice {
+        display: flex;
+        gap: 0.3rem;
+      }
+
+      h1 {
+        font-size: 1.1rem;
+      }
+
+      .file {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        :first-child {
+          background-color: white;
+          color: black;
+          border: 1px solid black;
+          // margin-bottom: 0.8rem;
+          &:hover {
+            background-color: black;
+            color: white;
+            overflow: hidden;
+          }
+        }
+
+        :last-child {
+          background-color: black;
+          &:hover {
+            background-color: gray;
+          }
+        }
+
+        > button {
+          font-size: 0.9rem;
+          border: none;
+          cursor: pointer;
+          color: white;
+          padding: 0.2rem;
+          border-radius: 3px;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.auth {
+  padding: 0 5%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(42, 41, 41);
+
+  .formContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    height: 35rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+    background-color: white;
+    .imgContainer {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    > form {
+      // border: 2px solid lightgray;
+      background-color: white;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 2.5rem;
+
+      h1 {
+        font-size: 2.5rem;
+        color: black;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-family: cursive;
+      }
+
+      input {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        outline: none;
+        border: none;
+        box-shadow: 0px 1px 1px grey;
+        color: black;
+        background-color: white;
+
+        &::placeholder {
+          color: black;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+
+      .form-error {
+        color: red;
+        margin-bottom: 0.5rem;
+        font-size: 0.7rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: gray;
+        }
+      }
+
+      .signup-link {
+        display: flex;
+        justify-content: center;
+        gap: 0.2rem;
+        color: black;
+
+        span {
+          font-size: 0.9rem;
+          text-align: center;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chatboat-container {
+  color: white;
+  position: fixed;
+  top: 40px;
+  right: 10px;
+  width: 350px;
+  // margin: auto;
+  height: 32rem;
+  background-color: lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px black;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: black;
+    padding: 0.5rem 1rem;
+    height: 10%;
+    border-radius: 10px 10px 0px 0px;
+
+    h1 {
+      font-size: 1.1rem;
+      // position: sticky;
+      // top: 0;
+    }
+  }
+
+  .msg-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 3px;
+  }
+
+  .msg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  p {
+    color: black;
+    max-width: 70%;
+    padding: 10px;
+    margin: 20px 10px;
+    border-radius: 0 50px 50px 50px;
+    border: 1px solid black;
+  }
+  p span {
+    margin: 5px;
+  }
+  p span:first-child {
+    margin-right: 0;
+  }
+  .user_msg {
+    text-align: right;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: black;
+    color: white;
+    border-radius: 50px 0px 50px 50px;
+  }
+  .hide {
+    visibility: hidden;
+    display: none;
+  }
+  form {
+    height: 10%;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid lightgray;
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: black;
+    background: transparent;
+    display: flex;
+    align-items: center;
+  }
+  input::placeholder {
+    color: gray;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+
+  .imgae-generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    gap: 1rem;
+    width: 35rem;
+    height: 40rem;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 20px;
+    background-color: white;
+
+    .header {
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .img-loading {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+
+      .image {
+        width: 100%;
+        height: 22rem;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        > img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          box-shadow: 1px 1px 5px black;
+        }
+      }
+
+      .loading {
+        display: flex;
+        flex-direction: column;
+        // align-items: flex-start;
+      }
+
+      .loading-bar {
+        width: 0px;
+        height: 8px;
+        background-color: gray;
+      }
+
+      .loading-text {
+        font-size: 1.1rem;
+      }
+
+      .loading-bar-full {
+        width: 100%;
+        height: 8px;
+        background-color: gray;
+        transition: 18s;
+      }
+      .hide {
+        display: none;
+      }
+    }
+
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      width: 100%;
+      // height: 3rem;
+      border: 2px solid gray;
+      border-radius: 20px;
+
+      .search-input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+
+        &::placeholder {
+          color: black;
+        }
+      }
+    }
+
+    .btn-generate {
+      display: flex;
+      justify-content: space-between;
+
+      > button {
+        background: transparent;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        width: 50%;
+        background-color: black;
+        font-size: 1.1rem;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(79, 78, 78);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 5%;
+  height: 50px;
+  background-color: blue;
+  color: white;
+}
+
+@media screen and (max-width: 680px) {
+  .posts {
+    width: 100%;
+  }
+
+  .drafts {
+    padding: 0 0.5rem;
+  }
+
+  .categories {
+    display: none;
+  }
+
+  .home {
+    padding: 0 0.5rem;
+  }
+
+  .singlePost {
+    padding: 0 0.5rem;
+  }
+
+  .singlePost > .content {
+    width: 100%;
+  }
+
+  .relatedPosts {
+    display: none;
+  }
+
+  .createPost {
+    padding: 0 0.5rem;
+  }
+
+  .menu > .item {
+    font-size: 0.7rem;
+  }
+
+  .auth > .formContainer > .form {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .auth > .formContainer > .imgContainer {
+    display: none;
+  }
+
+  .auth > .formContainer {
+    width: 90%;
+  }
+}
